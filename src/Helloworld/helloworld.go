@@ -11,7 +11,13 @@ func main() {
 	// fmt.Printf("hello, world\n")
 	//Reverse("hello, world\n")
 	fmt.Println(swap("Hello", "OGE"))
-
+	//使用var语句可以一次性定义多个变量,var语句可以在package和function级别中使用
+	var a, b, c, d int
+	a = 1
+	b = 2
+	c = 3
+	d = 4
+	fmt.Println(a, b, c, d)
 	fmt.Println(nameReturn("I Have a name", "hahahha"))
 }
 func Reverse(s string) string {

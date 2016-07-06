@@ -12,11 +12,8 @@ func main() {
 	//Reverse("hello, world\n")
 	fmt.Println(swap("Hello", "OGE"))
 	//使用var语句可以一次性定义多个变量,var语句可以在package和function级别中使用
-	var a, b, c, d int
-	a = 1
-	b = 2
-	c = 3
-	d = 4
+	//使用var还可以初始化这一串变量的值
+	var a, b, c, d int = 1, 2, 3, 4
 	fmt.Println(a, b, c, d)
 	fmt.Println(nameReturn("I Have a name", "hahahha"))
 }
@@ -35,7 +32,6 @@ func swap(x, y string) (string, string) {
 
 //go还支持返回带名称的值
 func nameReturn(x, y string) (a, b string) {
-
 	a = y
 	b = x
 	return

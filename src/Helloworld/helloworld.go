@@ -11,6 +11,8 @@ func main() {
 	// fmt.Printf("hello, world\n")
 	//Reverse("hello, world\n")
 	fmt.Println(swap("Hello", "OGE"))
+
+	fmt.Println(nameReturn("I Have a name", "hahahha"))
 }
 func Reverse(s string) string {
 	r := []rune(s)
@@ -23,4 +25,12 @@ func Reverse(s string) string {
 //go支持一个函数返回多个结果
 func swap(x, y string) (string, string) {
 	return y, x
+}
+
+//go还支持返回带名称的值
+func nameReturn(x, y string) (a, b string) {
+
+	a = y
+	b = x
+	return
 }

@@ -26,6 +26,7 @@ func main() {
 	fmt.Println(ABC)
 	// needTypeCheck()
 	testFor()
+	// foreverLoop()
 
 }
 func Reverse(s string) string {
@@ -69,4 +70,12 @@ func testFor() {
 		sum += sum
 		fmt.Println(sum)
 	}
+}
+
+//如果在for中啥都不写,那么这就是一个死循环了
+func foreverLoop() {
+	for {
+		fmt.Println("这是一个死循环")
+	}
+
 }

@@ -24,7 +24,8 @@ func main() {
 	fmt.Println(a, b, c, d)
 	fmt.Println(nameReturn("I Have a name", "hahahha"))
 	fmt.Println(ABC)
-	needTypeCheck()
+	// needTypeCheck()
+	testFor()
 
 }
 func Reverse(s string) string {
@@ -59,4 +60,13 @@ func needTypeCheck() {
 	fmt.Println(needInt(Small))
 	fmt.Println(needFloat(Small))
 	fmt.Println(needFloat(Big))
+}
+
+//for循环不需要括号,初始语句和post语句可以省略,如果连分号都不要了,那for就是一个while循环了
+func testFor() {
+	sum := 1
+	for sum < 100 {
+		sum += sum
+		fmt.Println(sum)
+	}
 }

@@ -38,7 +38,10 @@ func main() {
 	// noCoditionSwitch()
 	// deferExec()
 	// goPoint()
-	goStruct()
+	// goStruct()
+	// goArray()
+	// goAppendElement()
+	goArrayRange()
 
 }
 
@@ -156,4 +159,45 @@ func goStruct() {
 	p.X = 1223
 	p.Y = 2323
 	fmt.Println(p)
+}
+
+//go的声明方式是 []T,其中T为数组的类型,你可以任意截取数组,截取数组并不会创建新的数组,所以当你改变截取后的数组后,原始数组也会跟着改变
+func goArray() {
+	names := [4]string{
+		"Hello",
+		"World",
+		"Good",
+		"Morning",
+	}
+
+	//下面两句的含义是一样的
+	fmt.Println(names[0:2])
+	fmt.Println(names[:2])
+	fmt.Println(names)
+	var nilArray []int
+	fmt.Println(nilArray)
+	if nilArray == nil {
+		fmt.Println("nilArray")
+	}
+
+}
+
+func goAppendElement() {
+	names := [2]string{"Hello", "World"}
+	var nmaes1 []string
+	nmaes1 = append(nmaes1, "再说一次Hello World")
+	fmt.Println(names)
+	fmt.Println(nmaes1)
+}
+func goArrayRange() {
+	var pow = []int{1, 2, 4, 8, 16, 32, 64, 128}
+	//可以使用如下方式遍历数组,i表示索引,v表示值
+	for i, v := range pow {
+		fmt.Printf("索引是%d,元素是%d\n", i, v)
+	}
+	//如果不需要索引或值,可以使用_代替
+	for _, v := range pow {
+		fmt.Printf("元素是%d\n", v)
+	}
+
 }

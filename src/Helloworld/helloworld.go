@@ -5,6 +5,9 @@ import (
 	"math/rand"
 )
 
+//const用来表示常量,常量不能使用:=语法
+const ABC = 123456
+
 func main() {
 	//按照惯例,如果方法的首字母为大写,则表示这个方法为public,否则为private
 	fmt.Println("这是输出的随机数", rand.Intn(10))
@@ -16,6 +19,8 @@ func main() {
 	var a, b, c, d int = 1, 2, 3, 4
 	fmt.Println(a, b, c, d)
 	fmt.Println(nameReturn("I Have a name", "hahahha"))
+	fmt.Println(ABC)
+
 }
 func Reverse(s string) string {
 	//在方法里面,:=语句可以实现var的功能,go会自动监测类型

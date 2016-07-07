@@ -18,6 +18,7 @@ func main() {
 	fmt.Println(nameReturn("I Have a name", "hahahha"))
 }
 func Reverse(s string) string {
+	//在方法里面,:=语句可以实现var的功能,go会自动监测类型
 	r := []rune(s)
 	for i, j := 0, len(r)-1; i < len(r)/2; i, j = i+1, j-i {
 		r[i], r[j] = r[j], r[i]

@@ -27,8 +27,11 @@ func main() {
 	// needTypeCheck()
 	testFor()
 	// foreverLoop()
+	// goIf()
+	goSwitch()
 
 }
+
 func Reverse(s string) string {
 	//在方法里面,:=语句可以实现var的功能,go会自动监测类型
 	r := []rune(s)
@@ -78,4 +81,28 @@ func foreverLoop() {
 		fmt.Println("这是一个死循环")
 	}
 
+}
+
+//go中的if语句,go中的if语句可以有一个前置语句,在if判断之前执行它
+//下面的if中定义了v变量,这个变量在else语句中也是可以访问的
+//需要注意if后面的}括号和else必须在一行,否则编译的时候会报错
+func goIf() {
+	if v := 100; v < 100 {
+		fmt.Println("90是小于100的")
+	} else {
+
+		fmt.Print(v)
+	}
+}
+
+//go中的switch语法基本和if是一致的
+func goSwitch() {
+	switch os := "a"; os {
+	case "a":
+		fmt.Println("case a")
+	case "b":
+		fmt.Println("case b")
+	case "c":
+		fmt.Println("case c")
+	}
 }

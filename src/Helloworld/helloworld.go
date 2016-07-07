@@ -3,6 +3,7 @@ package main
 import (
 	"fmt"
 	"math/rand"
+	"time"
 )
 
 //const用来表示常量,常量不能使用:=语法
@@ -28,7 +29,8 @@ func main() {
 	testFor()
 	// foreverLoop()
 	// goIf()
-	goSwitch()
+	// goSwitch()
+	noCoditionSwitch()
 
 }
 
@@ -104,5 +106,18 @@ func goSwitch() {
 		fmt.Println("case b")
 	case "c":
 		fmt.Println("case c")
+	}
+}
+
+//Go也支持if then else 模式,就是简单的在switch中不设置条件
+func noCoditionSwitch() {
+	t := time.Now()
+	switch {
+	case t.Hour() < 12:
+		fmt.Println("Good Morning")
+	case t.Hour() < 17:
+		fmt.Println("Good Afteroon")
+	default:
+		fmt.Println("Good Evening")
 	}
 }

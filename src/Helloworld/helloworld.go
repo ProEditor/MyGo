@@ -41,7 +41,8 @@ func main() {
 	// goStruct()
 	// goArray()
 	// goAppendElement()
-	goArrayRange()
+	// goArrayRange()
+	goMap()
 
 }
 
@@ -200,4 +201,24 @@ func goArrayRange() {
 		fmt.Printf("元素是%d\n", v)
 	}
 
+}
+
+//go中的字典
+func goMap() {
+	keymap := make(map[string]Vertex)
+	keymap["HelloWorld"] = Vertex{X: 1, Y: 2}
+	fmt.Println(keymap)
+
+	keymap1 := map[string]Vertex{
+		"a": Vertex{X: 1, Y: 2},
+	}
+	keymap1["b"] = Vertex{X: 3, Y: 4}
+	fmt.Println(keymap1)
+
+	//通过delete可以删除掉某个key
+	delete(keymap1, "a")
+	fmt.Println(keymap1)
+
+	value, ok := keymap1["a"]
+	fmt.Println("value is", value, "is exist ", ok)
 }

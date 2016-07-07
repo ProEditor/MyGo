@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"math"
 	"math/rand"
 	"time"
 )
@@ -42,7 +43,9 @@ func main() {
 	// goArray()
 	// goAppendElement()
 	// goArrayRange()
-	goMap()
+	// goMap()
+	vertex := Vertex{X: 1, Y: 2}
+	fmt.Println(vertex.Abs())
 
 }
 
@@ -221,4 +224,9 @@ func goMap() {
 
 	value, ok := keymap1["a"]
 	fmt.Println("value is", value, "is exist ", ok)
+}
+
+//go中没有类的概念,但是如果为一个对象编写一个方法可以用下面的方法
+func (v Vertex) Abs() float64 {
+	return math.Sqrt(float64(v.X*v.X + v.Y*v.Y))
 }

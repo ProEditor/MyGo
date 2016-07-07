@@ -26,11 +26,12 @@ func main() {
 	fmt.Println(nameReturn("I Have a name", "hahahha"))
 	fmt.Println(ABC)
 	// needTypeCheck()
-	testFor()
+	// testFor()
 	// foreverLoop()
 	// goIf()
 	// goSwitch()
-	noCoditionSwitch()
+	// noCoditionSwitch()
+	deferExec()
 
 }
 
@@ -120,4 +121,10 @@ func noCoditionSwitch() {
 	default:
 		fmt.Println("Good Evening")
 	}
+}
+
+//go中通过defer来延迟语句的执行,使用defer的语句在方法返回的时候才执行
+func deferExec() {
+	defer fmt.Println("这句话在前面,但是等到方法返回后才执行")
+	fmt.Println("我在后面,但是我先执行")
 }

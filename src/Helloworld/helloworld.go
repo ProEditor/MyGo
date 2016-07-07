@@ -13,6 +13,11 @@ const (
 	Small = 1 >> 99
 )
 
+type Vertex struct {
+	X int
+	Y int
+}
+
 func main() {
 	//按照惯例,如果方法的首字母为大写,则表示这个方法为public,否则为private
 	fmt.Println("这是输出的随机数", rand.Intn(10))
@@ -31,7 +36,9 @@ func main() {
 	// goIf()
 	// goSwitch()
 	// noCoditionSwitch()
-	deferExec()
+	// deferExec()
+	// goPoint()
+	goStruct()
 
 }
 
@@ -127,4 +134,26 @@ func noCoditionSwitch() {
 func deferExec() {
 	defer fmt.Println("这句话在前面,但是等到方法返回后才执行")
 	fmt.Println("我在后面,但是我先执行")
+}
+
+//go中的指针
+func goPoint() {
+	a, b := 1, 2
+	p := &a
+	fmt.Println(a)
+	fmt.Println(b)
+	fmt.Println(*p)
+}
+
+//go中的结构体
+//指针可以直接的引用结构体,而不需要解引用;
+//初始化结构体的时候,可以只初始化一部分
+func goStruct() {
+	fmt.Println(Vertex{1, 2})
+	fmt.Println("测试结构体和指针的引用")
+	v := Vertex{X: 3, Y: 5}
+	p := &v
+	p.X = 1223
+	p.Y = 2323
+	fmt.Println(p)
 }

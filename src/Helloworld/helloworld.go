@@ -7,6 +7,10 @@ import (
 
 //const用来表示常量,常量不能使用:=语法
 const ABC = 123456
+const (
+	Big   = 1 << 100
+	Small = 1 >> 99
+)
 
 func main() {
 	//按照惯例,如果方法的首字母为大写,则表示这个方法为public,否则为private
@@ -20,6 +24,7 @@ func main() {
 	fmt.Println(a, b, c, d)
 	fmt.Println(nameReturn("I Have a name", "hahahha"))
 	fmt.Println(ABC)
+	needTypeCheck()
 
 }
 func Reverse(s string) string {
@@ -41,4 +46,17 @@ func nameReturn(x, y string) (a, b string) {
 	a = y
 	b = x
 	return
+}
+func needInt(x int) int {
+	return x*10 + 1
+}
+func needFloat(x float64) float64 {
+	return x * 0.1
+}
+
+//如果在定义常量的时候,没有指定一个类型,那么会根据需要自动进行推导
+func needTypeCheck() {
+	fmt.Println(needInt(Small))
+	fmt.Println(needFloat(Small))
+	fmt.Println(needFloat(Big))
 }
